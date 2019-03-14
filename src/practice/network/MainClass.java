@@ -26,7 +26,6 @@ public class MainClass {
 		String msg = br.readLine();
 		
 		System.out.println("msg: " + msg);
-		
 		br.close();
 		
 		Gender gender = Gender.LESBIAN;
