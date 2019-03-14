@@ -4,7 +4,6 @@ import java.util.Calendar;
 
 public class CalendarClass {
 
-	// DATE와 DAY_OF_MONTH는 같다.
 	private Calendar cal = null;
 	// 요일 표시
 	private String[] header = { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
@@ -38,7 +37,7 @@ public class CalendarClass {
 			
 			tableRows = cal.getActualMaximum(Calendar.WEEK_OF_MONTH);
 			startDayOfWeek = cal.get(Calendar.DAY_OF_WEEK); 
-			endDate = cal.getActualMaximum(Calendar.DATE);
+			endDate = cal.getActualMaximum(Calendar.DATE);		// DATE와 DAY_OF_MONTH는 같다.
 		}
 		
 	}
