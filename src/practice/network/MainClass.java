@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 public class MainClass {
 
 	public static void main(String[] args) throws IOException {
+		
 		/*
 		ServerSocket ss = null;
 		Socket s = null;
@@ -31,5 +32,4 @@ public class MainClass {
 		Gender gender = Gender.LESBIAN;
 		System.out.println(gender.convertKorean());
 	}
-
 }

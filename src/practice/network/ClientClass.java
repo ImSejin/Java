@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class ClientClass {
 
 	public static void main(String[] args) throws Exception {
+		
 		Socket s = null;
 		
 		PrintWriter pw = null;
@@ -26,23 +27,23 @@ public class ClientClass {
 		
 		while (true) {
 			System.out.println(" -- input the message -- ");
-			String msg_to = scan.nextLine();
-			pw.println(msg_to);
+			String msgTo = scan.nextLine();
+			
+			pw.println(msgTo);
 			pw.flush();
 			
-			if(msg_to.equals("stop")) {
+			if(msgTo.equals("stop")) {
 				System.out.println(" -- success to be disconnected with server -- ");
 				break;
+			} else {
+				String msgFrom = br.readLine();
+				System.out.println("msg: " + msgFrom);
 			}
-
-			String msg_from = br.readLine();
-			System.out.println("msg: " + msg_from);
-			
 		}
 		
-		scan.close();
 		s.close();
-		
+		pw.close();
+		br.close();
+		scan.close();
 	}
-
 }

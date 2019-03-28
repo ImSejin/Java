@@ -9,6 +9,7 @@ import java.net.Socket;
 public class ServerClass {
 
 	public static void main(String[] args) throws Exception{
+		
 		ServerSocket ss = null;
 		Socket s = null;
 		
@@ -27,19 +28,19 @@ public class ServerClass {
 		
 		while (true) {
 			String msg = br.readLine();
-			System.out.println("msg: " + msg);
 			
 			if(msg.equals("stop")) {
 				System.out.println(" -- the client stops the dialogue -- ");
 				break;
+			} else {
+				System.out.println("msg: " + msg);
+				pw.println(" -- success to send the message to client -- ");
+				pw.flush();
 			}
-
-			pw.println(" -- success to send the message to client -- ");
-			pw.flush();
 		}
 		
 		ss.close();
-		
+		pw.close();
+		br.close();
 	}
-
 }
