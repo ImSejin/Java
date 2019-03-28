@@ -23,6 +23,7 @@ public class FileWriterClass {
 			try {
 				// 데이터 쓰기
 				out.write(data.getBytes(), 0, data.getBytes().length);
+//				out.write(-1);	// FileOutputStream.write(FileInputStream.read())로 응용 가능하다
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

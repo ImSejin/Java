@@ -21,18 +21,16 @@ public class FileLoaderClass {
 			in = new FileInputStream(path);
 			int data = 0;
 			
-			while (true) {
-				try {
-					// 파일 읽기
-					data = in.read();
-					if(data == -1) break;
-					System.out.println("data: " + data);
-					
-				} catch (IOException e) {
-					e.printStackTrace();
+			try {
+				while (data != -1) {
+				// 파일 읽기
+				data = in.read();
+				System.out.println("data: " + data);
 				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			
+		
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} finally {

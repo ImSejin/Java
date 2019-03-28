@@ -1,24 +1,62 @@
 package practice.io;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 
 public class MainClass {
 
 	public static void main(String[] args) throws IOException {
 		
-		/*
 		String path = "E:\\eclipse-workspace\\Webtest\\hello_world_copy.txt";
+		byte[] buffer = new byte[512];
 		
-		FileLoader fl = new FileLoader("E:\\eclipse-workspace\\Webtest\\hello_world.txt");
-		byte[] b = new byte[3];
+		// ---
+		/*
+		FileInputStream fis = new FileInputStream(path);
+		FileOutputStream fos = new FileOutputStream("copied.txt");
+		
+		// read()가 argument를 받지 않으면 개별 문자의 byte를 반환한다
+//		int data = 0;
+//			while ( (data = fis.read()) != -1 ) {
+//				fos.write(data);
+		
+		// read()가 argument를 받으면 argument의 length 내에서 총 몇 byte나 차지하는지를 반환한다
+		int dataCount = 0;
+		while ( (dataCount = fis.read(buffer)) != -1 ) {
+			fos.write(buffer, 0, dataCount);
+		}
+		fos.close();
+		fis.close();
+		*/
+		// ---
+		
+		PrintStream ps = System.out;
+		PrintWriter pw2 = new PrintWriter(ps);
+		pw2.println("ddd");
+		
+		// ---
+		
+		BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+		String str = br2.readLine();
+		System.out.println(str);
+		
+//		pw2.close();
+		br2.close();
+		
+		// ---
+		/*
+		FileLoaderClass fl = new FileLoaderClass("E:\\eclipse-workspace\\Webtest\\hello_world.txt");
 		
 		fl.read();
 		
 		// ---
 		
-		FileWriter fw = new FileWriter(path);
+		FileWriterClass fw = new FileWriterClass(path);
 		
-		fw.write("임세진!입니다.");
+		fw.write("임세진!입니다");
 		
 		// ---
 		
@@ -45,6 +83,7 @@ public class MainClass {
 		
 		// ---
 		
+		/*
 		String path_to_load = ".\\testFile.txt";
 		String path_to_save = ".\\testFile_copy.txt";
 		
@@ -60,6 +99,7 @@ public class MainClass {
 		File file = new File(".");
 		String absolutePath = file.getAbsolutePath();
 		System.out.println(absolutePath);
+		*/
 		
 		// ---
 		
