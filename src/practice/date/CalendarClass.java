@@ -1,12 +1,11 @@
-package practice;
+package practice.date;
 
 import java.util.Calendar;
 
 public class CalendarClass {
 
 	private Calendar cal = null;
-	// 요일 표시
-	private String[] header = { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };
+	private String[] header = { "SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT" };	// 요일 표시
 	
 	private int startDayOfWeek;				// 해당 월의 시작 요일 (SUN: 1, ... , SAT: 7)
 	private int endDate;					// 해당 월의 마지막 날짜
@@ -24,7 +23,7 @@ public class CalendarClass {
 			this.year = year;
 		}
 		
-		// month 값의 범위는 1 ~ 12으로 제한한다
+		// 1월 ~ 12월이 아니면 예외를 발생한다
 		if(month < 1 || month > 12) {
 			throw new Exception("month에는 1 ~ 12의 값만 들어갈 수 있습니다.");
 		} else {
@@ -39,7 +38,6 @@ public class CalendarClass {
 			startDayOfWeek = cal.get(Calendar.DAY_OF_WEEK); 
 			endDate = cal.getActualMaximum(Calendar.DATE);		// DATE와 DAY_OF_MONTH는 같다.
 		}
-		
 	}
 	
 	public void printCalendar() {
@@ -74,13 +72,11 @@ public class CalendarClass {
 			}
 			System.out.println();
 		}
-		
 	}
 
 	public static void main(String[] args) throws Exception {
 		
 		CalendarClass cal = new CalendarClass(2020, 2);
 		cal.printCalendar();
-		
 	}
 }
